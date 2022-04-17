@@ -676,7 +676,6 @@ export default class BasicMessageEditor extends React.Component<IProps, IState> 
         this.editorRef.current.addEventListener("input", this.onInput, true);
         this.editorRef.current.addEventListener("compositionstart", this.onCompositionStart, true);
         this.editorRef.current.addEventListener("compositionend", this.onCompositionEnd, true);
-        this.editorRef.current.focus();
     }
 
     private getInitialCaretPosition(): DocumentPosition {
@@ -755,6 +754,7 @@ export default class BasicMessageEditor extends React.Component<IProps, IState> 
                 onPaste={this.onPaste}
                 onKeyDown={this.onKeyDown}
                 ref={this.editorRef}
+                autofocus="true"
                 aria-label={this.props.label}
                 role="textbox"
                 aria-multiline="true"
